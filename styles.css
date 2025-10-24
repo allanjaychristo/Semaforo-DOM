@@ -1,0 +1,115 @@
+body {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+    background-color: #f0f0f0;
+    font-family: Arial, sans-serif;
+    flex-direction: column;
+}
+
+h1 {
+    margin-bottom: 30px;
+    color: #333;
+}
+
+.semaforo__caixa {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    background-color: #222;
+    padding: 20px;
+    border-radius: 20px;
+    box-shadow: 0 0 20px rgba(0,0,0,0.5);
+    margin-bottom: 30px;
+}
+
+.semaforo__circulo {
+    width: 80px;
+    height: 80px;
+    border-radius: 50%;
+    margin: 10px 0;
+    background-color: #555;
+    transition: background-color 0.3s;
+}
+
+.semaforo__circulo--vermelho.active { background-color: red; }
+.semaforo__circulo--amarelo.active { background-color: yellow; }
+.semaforo__circulo--verde.active { background-color: green; }
+
+.app__tabs {
+    display: flex;
+    gap: 10px;
+    margin-bottom: 20px;
+    flex-wrap: wrap;
+    justify-content: center;
+}
+
+.app__card-button {
+    padding: 10px 20px;
+    border: none;
+    border-radius: 8px;
+    cursor: pointer;
+    background-color: #ccc;
+    transition: background-color 0.2s;
+}
+
+.app__card-button:hover { background-color: #aaa; }
+.app__card-button.active {
+    background-color: #666;
+    color: #fff;
+}
+
+.controls #comecar-parar {
+    padding: 12px 25px;
+    background-color: #007BFF;
+    color: #fff;
+    border: none;
+    border-radius: 8px;
+    cursor: pointer;
+    font-size: 1rem;
+    transition: background-color 0.3s;
+}
+
+.controls {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 12px;
+    margin-top: 20px;
+}
+
+button#comecar-parar {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    padding: 14px 24px;
+    border-radius: 14px;
+    border: 1px solid rgba(255,255,255,.1);
+    cursor: pointer;
+    font-weight: 700;
+    letter-spacing: .2px;
+    background: var(--accent, #f4b860);
+    color: #0b0f19;
+    font-size: clamp(1rem, 2vw, 1.25rem);
+    transition: transform .05s ease, background .2s ease, border-color .2s ease;
+}
+
+button#comecar-parar:hover {
+    transform: translateY(-1px);
+    background: color-mix(in oklab, var(--accent, #f4b860) 80%, black);
+}
+
+button#comecar-parar:active {
+    transform: translateY(0);
+}
+
+button#comecar-parar:disabled {
+    opacity: .6;
+    cursor: not-allowed;
+}
+
+.app__card-button--comecar,
+.app__card-button--parar:not(#comecar-parar) {
+    display: none;
+}
